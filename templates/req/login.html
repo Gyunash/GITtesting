@@ -1,0 +1,17 @@
+{% extends 'req/base.html' %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <small>
+            <a href="{% url 'register' %}">Регистрация</a> | 
+            <a href="{% url 'password_reset' %}">Забыли пароль?</a>
+        </small>
+        <br>
+        <input type="submit" value="Войти" class="btn btn-outline-success">
+    </form>
+
+{% endblock %}
